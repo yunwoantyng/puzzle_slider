@@ -1,0 +1,35 @@
+"""
+    CS5001 Final Project
+    Design of the Puzzle Slider Game
+    Wan-Ting Yun
+    NUID 002745697
+"""
+
+The program was constructed by both procedural and object-oriented. First, the class Puzzle is used
+to store the information of each position of the puzzle. Also, by declaring a class variable, the
+current status of the blank square can be called without any instance. The is_adjacent function does
+not exclude the possibility of clicking on the blank square itself, so it is excluded in the function
+named click_on_puzzle.Second, the instances of the class Puzzle are stored in a list, so it can be
+iterated when needed.
+
+Several global variables are declared at the beginning of the code because I would like to change
+their values depending on the current situation. The flag variable is set up for checking whether
+the reset button is clicked, so when the user clicks reset and then clicks other buttons, the winner
+message will not pop up. The check_puzzle_file function is constructed by importing the os module to
+catch the .puz files in a designated directory. The leader_board function is separated into two modes.
+The mode "r" is used to read the file and demonstrate the content of file on the screen, while the
+mode "a" means appending the new leaders in the document.
+
+As for the turtles, different situations require different instances of turtles so that the when the
+clear() function is called, the whole screen will not disappear. Lastly, my algorithm for the bonus
+point is that odd-sized puzzles are solvable if the number of inversions is even, while even-sized
+puzzles are solvable if the number of inversions plus the row of the blank square is odd. An inversion
+is any pair of tiles i and j where i > j but i appears after j when cconsidering the board in row-major
+order. In that case, the compare_value function is used to count the inversions whereas the is_solvable
+function is designed to find the row of the blank and follow the algorithm of a solvable puzzle.
+
+
+
+
+
+Slider Puzzle. https://www.cs.princeton.edu/courses/archive/spring21/cos226/assignments/8puzzle/specification.php?fbclid=IwAR39hVwFXZKopEtVdoMtfuEe8SHHIQcsH9q-_eGiAFimnsR8a7L-R7fpJgc
